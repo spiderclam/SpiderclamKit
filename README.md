@@ -6,6 +6,10 @@ Just a blender addon for myself.
 
 Download zip. Install zip. Idk, you'll figure it out.
 
+## Usage
+
+This addon is currently only a pie menu in pose mode, which is toggled by pressing the `o` key. 
+
 ## Operations
 
 I'll try my best to document the included operations. It's easy now, since I barely have any.

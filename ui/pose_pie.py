@@ -7,6 +7,12 @@ class POSE_MT_Spiderclam_Pose_Kit(Menu):
     bl_label = "Fast Pose Tools"
 
     def draw(self, context):
+        if context.object and context.object.mode == 'POSE':
+            self.drawPie(context)
+        else:
+            self.layout.label(text="Please switch to pose mode to use this menu.")
+
+    def drawPie(self, context):
         layout = self.layout
 
         pie = layout.menu_pie()
@@ -25,7 +31,7 @@ def register():
     if window_manager.keyconfigs.addon:
         keymap = window_manager.keyconfigs.addon.keymaps.new(name='3D View', space_type='VIEW_3D')
 
-        keymap_item = keymap.keymap_items.new('wm.call_menu_pie', "O", "PRESS")
+        keymap_item = keymap.keymap_items.new('wm.call_menu_pie', "O", "PRESS", alt=True)
         keymap_item.properties.name = "POSE_MT_Spiderclam_Pose_Kit"
 
         # save the key map to deregister later
