@@ -15,7 +15,7 @@ The value of row defines (in order) which row they will be rendered on.
 
 ![Panel preview](./images/panel.png)
 
-This addon currently only offers a pie menu in pose mode, which is toggled by pressing `alt`+`o`.
+Besides the panel there's a pie menu, which is toggled by pressing `alt`+`o`.
 
 ## Operations
 
