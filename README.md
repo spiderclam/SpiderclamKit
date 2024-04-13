@@ -8,7 +8,14 @@ Download zip. Install zip. Idk, you'll figure it out.
 
 ## Usage
 
-This addon is currently only a pie menu in pose mode, which is toggled by pressing the `o` key. 
+By default a rigging panel to toggle bone collection visibility is added.
+
+To use this add custom properties to the bone collections that should be grouped named `row`.
+The value of row defines (in order) which row they will be rendered on.
+
+![Panel preview](./images/panel.png)
+
+This addon currently only offers a pie menu in pose mode, which is toggled by pressing `alt`+`o`.
 
 ## Operations
 

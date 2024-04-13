@@ -18,7 +18,9 @@ class POSE_MT_Spiderclam_Pose_Kit(Menu):
         pie = layout.menu_pie()
         # operator_enum will just spread all available options
         # for the type enum of the operator on the pie
+        
         pie.operator("sc.co_ldc_set_distance_by_selected", icon="MOD_LENGTH")
+        pie.operator("sc.oo_reset_transform", icon="TRANSFORM_ORIGINS")
 
 
 global_addon_keymaps = []

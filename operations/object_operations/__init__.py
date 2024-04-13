@@ -1,21 +1,16 @@
-from . import object_operations
-from . import constraint_operations
+from . import reset_transform
 
 modules = [
-    object_operations,
-    constraint_operations
+    reset_transform
 ]
-
 
 def register():
     for module in modules:
         module.register()
 
-
 def unregister():
     for module in modules:
         module.unregister()
-
 
 if __name__ == "__main__":
     register()

@@ -9,8 +9,6 @@ bl_info = {
     "category" : "Rigging"
 }
 
-import bpy
-
 from . import operations
 from . import ui
 

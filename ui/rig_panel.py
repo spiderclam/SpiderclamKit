@@ -1,31 +1,24 @@
 import bpy
 
-class SpiderRig_PT_rigui(bpy.types.Panel):
+class RIG_PANEL_PT_Spiderclam_Pose_Kit(bpy.types.Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = 'Item'
     bl_label = "Rig UI"
-    bl_idname = "SpiderRig_PT_rigui"
+    bl_idname = "RIG_PANEL_PT_Spiderclam_Pose_Kit"
 
 
-### Check if the selected rig has the corresponding RigID
     @classmethod
     def poll(cls, context):
-        if context.active_object.type != 'ARMATURE':
-            return False
+        return (context.active_object.type == 'ARMATURE') and cls.has_rows(context)
 
-        return cls.has_rows(context)
 
     @classmethod
     def has_rows(cls, context):
         collections = bpy.data.armatures.get(context.active_object.data.name).collections
 
-        if collections:
-            for collection in collections:
-                if "row" in collection:
-                    return True
+        return any("row" in collection for collection in collections)
 
-        return False
 
     def draw(self, context):
         layout = self.layout
@@ -33,12 +26,9 @@ class SpiderRig_PT_rigui(bpy.types.Panel):
         grouped_collections = {}
 
         for collection in collections:
-            if "row" in collection:                
+            if "row" in collection:
                 row_value = collection["row"]
-
-                if row_value not in grouped_collections:
-                    grouped_collections[row_value] = []
-                grouped_collections[row_value].append(collection)
+                grouped_collections.setdefault(row_value, []).append(collection)
                 
         if not grouped_collections:
             return
@@ -50,11 +40,10 @@ class SpiderRig_PT_rigui(bpy.types.Panel):
             row = col.row(align=True)
             for item in items:
                 row.prop(item, 'is_visible', toggle=True, text=item.name)
-        
-classes = (SpiderRig_PT_rigui,)
+          
+classes = (RIG_PANEL_PT_Spiderclam_Pose_Kit,)
 
 register, unregister = bpy.utils.register_classes_factory(classes)
 
 if __name__ == "__main__":
     register()
- 
