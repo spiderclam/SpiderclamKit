@@ -1,7 +1,9 @@
 from . import reset_transform
+from . import make_org_bones
 
 modules = [
-    reset_transform
+    reset_transform,
+    make_org_bones
 ]
 
 def register():

@@ -7,20 +7,20 @@ class POSE_MT_Spiderclam_Pose_Kit(Menu):
     bl_label = "Fast Pose Tools"
 
     def draw(self, context):
-        if context.object and context.object.mode == 'POSE':
-            self.drawPie(context)
-        else:
-            self.layout.label(text="Please switch to pose mode to use this menu.")
 
-    def drawPie(self, context):
         layout = self.layout
 
         pie = layout.menu_pie()
         # operator_enum will just spread all available options
         # for the type enum of the operator on the pie
         
-        pie.operator("sc.co_ldc_set_distance_by_selected", icon="MOD_LENGTH")
         pie.operator("sc.oo_reset_transform", icon="TRANSFORM_ORIGINS")
+
+        if context.object and context.object.mode == 'POSE':
+            pie.operator("sc.co_ldc_set_distance_by_selected", icon="MOD_LENGTH")
+
+        if context.object and context.object.mode.startswith('EDIT'):
+            pie.operator("sc.oo_make_org_bones", icon="DUPLICATE")
 
 
 global_addon_keymaps = []
