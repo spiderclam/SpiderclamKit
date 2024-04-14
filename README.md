@@ -15,11 +15,35 @@ The value of row defines (in order) which row they will be rendered on.
 
 ![Panel preview](./images/panel.png)
 
-Besides the panel there's a pie menu, which is toggled by pressing `alt`+`o`.
+Besides the panel there's a pie menu, which is toggled by pressing `alt`+`shift`+`o`.
 
 ## Operations
 
-I'll try my best to document the included operations. It's easy now, since I barely have any.
+I'll try my best to document the included operations.
+
+### Armature operations
+
+I found it very frustrating to create and align bones.
+
+Select the mesh, select vertices, move the cursor to selected, back to object mode, select the armature, select the bone, move to cursor, back to object mode...
+
+So instead this addon keeps track of the last active armature, allowing you to perform operations on it without switching modes and selections.
+
+Here are a couple.
+
+**Note:** these operations (with the exception of Add bone at cursor) assume you have a tail selected.
+
+### Extrude bone to cursor
+
+Extrude the last selected tail, and align extruded bone to cursor. Newly extruded bone's tail will be active after.
+
+### Add bone at cursor
+
+Adds a new bone at the cursor position. New created bone's tail will be active after.
+
+### Move bone to cursor
+
+Move the selected bone to the cursor. This is useful for example after creating a new bone.
 
 ### Make ORG bones
 

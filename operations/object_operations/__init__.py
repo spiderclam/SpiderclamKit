@@ -1,9 +1,11 @@
 from . import reset_transform
 from . import make_org_bones
+from . import extrude_bone_to_cursor
 
 modules = [
     reset_transform,
-    make_org_bones
+    make_org_bones,
+    extrude_bone_to_cursor
 ]
 
 def register():

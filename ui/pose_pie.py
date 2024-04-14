@@ -15,6 +15,9 @@ class POSE_MT_Spiderclam_Pose_Kit(Menu):
         # for the type enum of the operator on the pie
         
         pie.operator("sc.oo_reset_transform", icon="TRANSFORM_ORIGINS")
+        pie.operator("sc.oo_extrude_bone_to_cursor", icon="CURSOR")
+        pie.operator("sc.oo_add_bone_at_cursor", icon="PLUS")
+        pie.operator("sc.oo_move_bone_to_cursor", icon="ORIENTATION_CURSOR")
 
         if context.object and context.object.mode == 'POSE':
             pie.operator("sc.co_ldc_set_distance_by_selected", icon="MOD_LENGTH")
@@ -31,9 +34,9 @@ def register():
 
     window_manager = bpy.context.window_manager
     if window_manager.keyconfigs.addon:
-        keymap = window_manager.keyconfigs.addon.keymaps.new(name='3D View', space_type='VIEW_3D')
+        keymap = window_manager.keyconfigs.addon.keymaps.new(name='3D View', space_type='VIEW_3D', region_type='WINDOW')
 
-        keymap_item = keymap.keymap_items.new('wm.call_menu_pie', "O", "PRESS", alt=True)
+        keymap_item = keymap.keymap_items.new('wm.call_menu_pie', "O", "PRESS", alt=True, shift=True)
         keymap_item.properties.name = "POSE_MT_Spiderclam_Pose_Kit"
 
         # save the key map to deregister later
