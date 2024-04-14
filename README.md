@@ -33,15 +33,15 @@ Here are a couple.
 
 **Note:** these operations (with the exception of Add bone at cursor) assume you have a tail selected.
 
-### Extrude bone to cursor
+#### Extrude bone to cursor
 
 Extrude the last selected tail, and align extruded bone to cursor. Newly extruded bone's tail will be active after.
 
-### Add bone at cursor
+#### Add bone at cursor
 
 Adds a new bone at the cursor position. New created bone's tail will be active after.
 
-### Move bone to cursor
+#### Move bone to cursor
 
 Move the selected bone to the cursor. This is useful for example after creating a new bone.
 
@@ -60,7 +60,7 @@ In armature edit mode, this will:
 
 #### Notes:
 
-- Selected bones must be prefixed with DEF\_
+- Selected bones must be prefixed with `DEF_`
 - ORG is used because these get ignored in keyframes (where TGT is not)
 
 ### Reset transform For Selection
